@@ -1,10 +1,8 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import './Navbar.css'
 import { assets } from '../../assets/assets'
-import { use } from 'react'
-import { useState } from 'react'
-import{Link} from 'react-router-dom';
-import{StoreContext} from '../../context/StoreContext'
+import { Link } from 'react-router-dom';
+import { StoreContext } from '../../context/StoreContext'
 
 
 
