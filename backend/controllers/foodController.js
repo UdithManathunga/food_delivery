@@ -3,11 +3,14 @@ import fs from "fs";
 
 // Add food item
 const addFood = async (req, res) => {
+    console.log("=== ADD FOOD REQUEST ===");
     console.log("BODY:", req.body);
     console.log("FILE:", req.file);
+    console.log("HEADERS:", req.headers);
     try {
         // Check if file was uploaded
         if (!req.file) {
+            console.log("ERROR: No file uploaded");
             return res.status(400).json({
                 success: false,
                 message: "No image file uploaded"

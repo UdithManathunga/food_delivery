@@ -20,6 +20,12 @@ hr {
   height: 1px;
   background-color: #a9a9a9;
 }
-.app-conntent {
+.app-content {
   display: flex;
+  min-height: calc(100vh - 100px);
+}
+
+.app-content > div:last-child {
+  flex: 1;
+  padding: 20px;
 }

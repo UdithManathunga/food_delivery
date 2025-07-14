@@ -12,7 +12,17 @@ const storage = multer.diskStorage({
     }
 })
 
-const upload = multer({ storage: storage });
+const upload = multer({ 
+    storage: storage,
+    fileFilter: (req, file, cb) => {
+        console.log("Multer processing file:", file.originalname);
+        if (file.mimetype.startsWith('image/')) {
+            cb(null, true);
+        } else {
+            cb(new Error('Only image files are allowed!'), false);
+        }
+    }
+});
 
 foodRouter.get("/list", getAllFood);
 foodRouter.post("/add", upload.single("image"), addFood);

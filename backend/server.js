@@ -21,7 +21,7 @@ connectDB();
 app.use("/api/food",foodRouter)  
 app.use("/image", express.static("uploads")) // to serve static files from uploads folder
 
-// Add JSON parser for non-file routes (if needed)
+// Add JSON parser for non-file routes (if needed) - moved after routes to avoid interfering with file uploads
 app.use(express.json())   
 
 app.get("/",(req,res)=>{
